@@ -1,0 +1,64 @@
+html,body { height: 100vh; width: 100vw; margin: 0px; padding: 0px; }
+
+
+.full {
+    height: 100%
+}
+
+.centergraph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stay {
+    position: fixed;
+    height: 100%;
+    width: 100%
+}
+
+#map {
+    position: relative;
+    background: none;
+    height: 90%;
+    width: 55%;
+
+}
+
+
+.active {
+    opacity: 0.9;
+    font-family: "TiemposTextWeb-Regular","Georgia";
+}
+
+.inactive {
+    opacity: 0.3;
+}
+
+.step {
+    margin-bottom: 100px;
+    font-family: Arial,Helvetica,"san-serif";
+}
+
+.step p {
+    color: #616161;
+}
+.step li {
+    color: #616161;
+}
+
+#graph {
+    position: relative;
+    background: none;
+    height: 90%;
+    width: 55%;
+
+}
+
+#graphcontainer {
+    position: fixed;
+    background: none;
+    height: 90%;
+    width: 55%;
+
+}
