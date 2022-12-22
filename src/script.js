@@ -1,5 +1,8 @@
-
-
+// Sutan Mufti (2022)
+// references:
+// Cuthbert Chow & Jim Valladingham
+// https://towardsdatascience.com/how-i-created-an-interactive-scrolling-visualisation-with-d3-js-and-how-you-can-too-e116372e2c73
+// https://vallandingham.me/scroller.html
 
 var map = L.map('map',{
     zoomControl: false
@@ -10,16 +13,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     
 }).addTo(map);
 
-console.log(window.scrollY)
+// console.log(window.scrollY)
 
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.airport) {
         layer.bindPopup(feature.properties.airport).openPopup();
-        console.log(feature.properties.airport )
+        // console.log(feature.properties.airport )
         if (feature.properties.airport === 'Heathrow'){
-            console.log("opening popup!")
+            // console.log("opening popup!")
             layer.openPopup();
         }
         
@@ -30,7 +33,7 @@ function popupAssign(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.name) {
         layer.bindTooltip(feature.properties.name).openTooltip();
-        console.log(feature.properties.airport )
+        // console.log(feature.properties.airport )
         
         
         
@@ -93,7 +96,7 @@ var elizaebthLine_st = L.geoJSON(null, {
     });
   elizaebthLine_st.addData(elizabethLineSt_geojson);
 
-console.log(message)
+// console.log(message)
 
 
 let idx = 0
@@ -117,7 +120,7 @@ sections.each(function(d,i) {
     }
     sectionPositions.push(top - startPos);
 });
-console.log("section positions:",sectionPositions)
+// console.log("section positions:",sectionPositions)
 
 d3.selectAll("section").style("opacity", "0.2");
 
@@ -127,8 +130,8 @@ d3.selectAll("section")
         //     .style("background-color", "orange");
 
           // Get current event info
-          console.log(d3.event);
-          console.log("the id:",sectionsArray.indexOf(this.id))
+        //   console.log(d3.event);
+        //   console.log("the id:",sectionsArray.indexOf(this.id))
 
           const yposition = sectionPositions[sectionsArray.indexOf(this.id)]
           // Get x & y co-ordinates
@@ -292,13 +295,13 @@ const trackPosition = ()=>{
     let sectionIndex = d3.bisect(sectionPositions, pos);
     sectionIndex = Math.min(sections.size() - 1, sectionIndex);
     activeIndex = sectionIndex
-    console.log(sectionIndex)
+    // console.log(sectionIndex)
 
     if (sectionsArray[sectionIndex] !== activeSection){
         previousSection = activeSection
         activeSection = sectionsArray[sectionIndex] 
-        console.log("active section:",activeSection)
-        console.log("previous section:",previousSection)
+        // console.log("active section:",activeSection)
+        // console.log("previous section:",previousSection)
 
         d3.select(`#${activeSection}`)
             .transition()
